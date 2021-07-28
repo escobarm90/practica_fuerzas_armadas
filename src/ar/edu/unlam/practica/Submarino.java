@@ -16,5 +16,8 @@ public class Submarino extends Vehiculo implements Acuatico {
 	public Double getProfundidad() {
 		return this.profundidad;
 	}
+	public String getTipo() {
+		return "Acuatico";
+	}
 
 }

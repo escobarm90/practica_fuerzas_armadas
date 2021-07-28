@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Set;
 
 import ar.edu.unlam.practica.enums.TipoDeBatalla;
+import ar.edu.unlam.practica.excepciones.VehiculoInexistenteException;
 
 public class FuerzaArmada {
 
@@ -49,6 +50,27 @@ public class FuerzaArmada {
 			}
 		}return buscada;
 	}
+	
+	public Vehiculo obtenerVehiculoPorNro(Integer nro){
+		Vehiculo buscado = null;
+		for(Vehiculo vehiculo: this.convoy) {
+			if(vehiculo.getnroVehiculoVehiculo()==nro) {
+				buscado = vehiculo;
+			}
+		}return buscado;
+	}
+
+	public Boolean enviarALaBatalla(String batalla, Integer i) throws Exception {
+		if(!convoy.contains(obtenerVehiculoPorNro(i))) {
+			throw new VehiculoInexistenteException("Vehiculo inexistente");
+		}
+		if(getBatalla(batalla).agregarAlConvoy(obtenerVehiculoPorNro(i))){
+			return true;
+		}
+		return false;
+	}
+
+
 		
 		
 }

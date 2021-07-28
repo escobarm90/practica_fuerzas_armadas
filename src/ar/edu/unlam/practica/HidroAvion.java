@@ -26,5 +26,9 @@ public class HidroAvion extends Vehiculo implements Volador, Acuatico{
 		
 		return this.altura;
 	}
+	
+	public String getTipo() {
+		return "HidroAvion";
+	}
 
 }

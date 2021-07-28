@@ -17,6 +17,8 @@ public class Avion extends Vehiculo implements Volador {
 		return this.altura;
 	}
 	
-	
+	public String getTipo() {
+		return "Volador";
+	}
 
 }

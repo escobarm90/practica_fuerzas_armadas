@@ -16,6 +16,10 @@ public abstract class Vehiculo{
 		return nroVehiculo;
 	}
 
+	public abstract String getTipo();
+		
+	
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -26,12 +30,6 @@ public abstract class Vehiculo{
 
 	@Override
 	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
 		Vehiculo other = (Vehiculo) obj;
 		if (nroVehiculo == null) {
 			if (other.nroVehiculo != null)
@@ -40,14 +38,5 @@ public abstract class Vehiculo{
 			return false;
 		return true;
 	}
-
-
-	
-
-
-
-
-	
-
 	
 }

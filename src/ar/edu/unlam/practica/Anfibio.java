@@ -26,7 +26,10 @@ public class Anfibio extends Vehiculo implements Terrestre, Acuatico {
 		// TODO Auto-generated method stub
 		return this.velocidad;
 	}
-
+	
+	public String getTipo() {
+		return "Anfibio";
+	}
 
 
 }

@@ -15,5 +15,9 @@ public class Tanque extends Vehiculo implements Terrestre {
 	public Double getVelocidad() {
 		return this.velocidad;
 	}
+	
+	public String getTipo() {
+		return "Terrestre";
+	}
 
 }
