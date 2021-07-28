@@ -6,6 +6,7 @@ import org.junit.Test;
 
 import ar.edu.unlam.practica.interfaces.Terrestre;
 import ar.edu.unlam.practica.interfaces.Volador;
+import ar.edu.unlam.practica.enums.TipoDeBatalla;
 import ar.edu.unlam.practica.interfaces.Acuatico;
 
 public class FuerzasArmadasTest {
@@ -50,43 +51,44 @@ public class FuerzasArmadasTest {
 		assertEquals(0.0, ((Acuatico) ag600).getProfundidad(), 0.01);
 	}
 
-	@Test
-	public void queSePuedaArmarElConvoy() {
-		FuerzaArmada argentina = new FuerzaArmada();
-		
-		Vehiculo avion1 = new Avion(1, "A-10");
-		Vehiculo avion2 = new Avion(2, "A-10");
-		Avion avion3 = new Avion(3, "A-10");
-		Tanque tanque1= new Tanque(3, "Renault FT");
-		Vehiculo submarino1 = new Submarino(5,"A-10");
-		
-		
-		
-		argentina.agregarVehiculo(avion1);		
-		argentina.agregarVehiculo(avion2);
-		argentina.agregarVehiculo(avion3);	
-		argentina.agregarVehiculo(tanque1);
-		argentina.agregarVehiculo(submarino1);		
-
-		assertEquals(4, argentina.getCapacidadDeDefensa(),0.1);
-		
-	}/*
+//	@Test
+//	public void queSePuedaArmarElConvoy() {
+//		FuerzaArmada argentina = new FuerzaArmada();
+//		
+//		Vehiculo avion1 = new Avion(1, "A-10");
+//		Vehiculo avion2 = new Avion(2, "A-10");
+//		Avion avion3 = new Avion(3, "A-10");
+//		Tanque tanque1= new Tanque(3, "Renault FT");
+//		Vehiculo submarino1 = new Submarino(5,"A-10");
+//		
+//		
+//		
+//		argentina.agregarVehiculo(avion1);		
+//		argentina.agregarVehiculo(avion2);
+//		argentina.agregarVehiculo(avion3);	
+//		argentina.agregarVehiculo(tanque1);
+//		argentina.agregarVehiculo(submarino1);		
+//
+//		assertEquals(avion2, argentina.getVehiculoPorNroDeVehiculo(2));
+//		//assertEquals(avion3, argentina.getVehiculoPorNroDeVehiculo(3));
+//		assertEquals(4, argentina.getCapacidadDeDefensa(),0.1);
+//		
+//	}
 
 	@Test
 	public void queSePuedaCrearUnaBatalla() {
 		FuerzaArmada argentina = new FuerzaArmada();
 
-		argentina.crearBatalla("San Lorenzo", TipoDeBatalla.TERRESTRE, 100.5, 20.3)
+		argentina.crearBatalla("San Lorenzo", TipoDeBatalla.TERRESTRE, 100.5, 20.3);
 		
 
-		assertEquals(100.5, argentina.getBatalla("San Lorenzo").getLatitud());
-		assertEquals(20.3, argentina.getBatalla("San Lorenzo").getLongitud());
+		assertEquals(100.5, argentina.getBatalla("San Lorenzo").getLatitud(),0.1);
+		assertEquals(20.3, argentina.getBatalla("San Lorenzo").getLongitud(),0.1);
 
 	}
 
-		assertEquals(100.5, argentina.getBatalla("San Lorenzo").getLatitud(),0.01);
-		assertEquals(20.3, argentina.getBatalla("San Lorenzo").getLongitud(),0.01);
-	}	/*
+		
+		
 
 	@Test
 	public void queSePuedaPlanearLaBatallaSobreElOceano() {
@@ -120,7 +122,7 @@ public class FuerzasArmadasTest {
 		assertTrue(argentina.enviarALaBatalla("San Lorenzo", 6));
 		assertTrue(argentina.enviarALaBatalla("San Lorenzo", 7));		
 	}
-
+/*
 	@Test
 	public void queSePuedaPresentarBatallaNaval() throws VehiculoInexistente, VehiculoIncompatible {
 		FuerzaArmada argentina = new FuerzaArmada();

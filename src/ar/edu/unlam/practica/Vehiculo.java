@@ -1,5 +1,7 @@
 package ar.edu.unlam.practica;
 
+import java.util.Objects;
+
 public abstract class Vehiculo{
 
 
@@ -13,8 +15,6 @@ public abstract class Vehiculo{
 	public Integer getnroVehiculoVehiculo() {
 		return nroVehiculo;
 	}
-	
-
 
 	@Override
 	public int hashCode() {
@@ -40,6 +40,12 @@ public abstract class Vehiculo{
 			return false;
 		return true;
 	}
+
+
+	
+
+
+
 
 	
 
